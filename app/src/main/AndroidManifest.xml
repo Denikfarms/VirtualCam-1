@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Core camera permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
+    <!-- Screen capture (Screen source) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+
+    <!-- Media access -->
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Notifications for foreground service -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Optional: real camera feed with effects -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.VirtualCam">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            VirtualCamService – foreground service that registers as a virtual camera.
+
+            android:exported="true" is required so the system can bind to it.
+            foregroundServiceType="camera" declares this as a camera service.
+
+            The intent-filter action "android.service.camera.VirtualCameraService" registers
+            this service with the Android camera subsystem as a virtual camera provider.
+        -->
+        <service
+            android:name=".service.VirtualCamService"
+            android:exported="true"
+            android:foregroundServiceType="camera|mediaProjection"
+            android:permission="android.permission.BIND_CAMERA_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.camera.VirtualCameraService" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
