@@ -1,6 +1,13 @@
 package com.virtualcam.service
 
 import android.app.Service
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.pm.ServiceInfo
+import android.os.Build
+import androidx.core.app.NotificationCompat
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
