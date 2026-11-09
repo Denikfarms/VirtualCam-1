@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base theme: no action bar – Compose draws the whole UI -->
-    <style name="Theme.VirtualCam" parent="android:Theme.Material.NoTitleBar">
+    <style name="Theme.VirtualCam" parent="android:Theme.Material.NoActionBar">
         <item name="android:windowBackground">#0A0F1A</item>
         <item name="android:statusBarColor">#0A0F1A</item>
         <item name="android:navigationBarColor">#0A0F1A</item>
