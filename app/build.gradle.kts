@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.virtualcam"
-        minSdk = 34      // Android 14+ required for VirtualCamera API
+        minSdk = 34 // Android 14+ required for VirtualCamera API
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -37,8 +37,10 @@ android {
     buildFeatures {
         compose = true
     }
-composeOptions {
-    kotlinCompilerExtensionVersion = "1.5.12"
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.12"
+    }
 }
 
 dependencies {
@@ -47,7 +49,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.0")
     implementation("androidx.activity:activity-compose:1.9.0")
 
-    // Compose BOM – pins all compose versions together
+    // Compose BOM - pins all compose versions together
     implementation(platform("androidx.compose:compose-bom:2024.05.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
