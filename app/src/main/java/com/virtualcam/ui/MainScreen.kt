@@ -301,7 +301,7 @@ private fun ImageSourceCard(viewModel: MainViewModel) {
         OutlinedButton(
             onClick  = { picker.launch("image/*") },
             shape    = RoundedCornerShape(10.dp),
-            colors   = OutlinedButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
+            colors   = ButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
             modifier = Modifier.fillMaxWidth()
         ) {
             Icon(Icons.Default.Photo, contentDescription = null, modifier = Modifier.size(16.dp))
@@ -332,7 +332,7 @@ private fun VideoSourceCard(viewModel: MainViewModel) {
         OutlinedButton(
             onClick  = { picker.launch("video/*") },
             shape    = RoundedCornerShape(10.dp),
-            colors   = OutlinedButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
+            colors   = ButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
             modifier = Modifier.fillMaxWidth()
         ) {
             Icon(Icons.Default.VideoFile, contentDescription = null, modifier = Modifier.size(16.dp))
@@ -395,7 +395,7 @@ private fun ScreenSourceCard(viewModel: MainViewModel) {
                 projectionLauncher.launch(pm.createScreenCaptureIntent())
             },
             shape    = RoundedCornerShape(10.dp),
-            colors   = OutlinedButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
+            colors   = ButtonDefaults.outlinedButtonColors(contentColor = CyanBright),
             modifier = Modifier.fillMaxWidth()
         ) {
             Icon(Icons.Default.ScreenShare, contentDescription = null, modifier = Modifier.size(16.dp))
